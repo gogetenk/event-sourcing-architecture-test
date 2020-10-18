@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>YtDeveloppement.EventSourcing.Customers.Dal</AssemblyName>
+    <RootNamespace>YtDeveloppement.EventSourcing.Customers.Dal</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YtDeveloppement.EventSourcing.Customers.Model\Customers.Model.csproj" />
+  </ItemGroup>
+
+</Project>

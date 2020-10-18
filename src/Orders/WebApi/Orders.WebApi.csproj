@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>e90f1212-50e0-449b-a765-68926636ccd9</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..\..</DockerfileContext>
+    <AssemblyName>YtDeveloppement.EventSourcing.Microservices.Orders.WebApi</AssemblyName>
+    <RootNamespace>YtDeveloppement.EventSourcing.Microservices.Orders.WebApi</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.0.1" />
+    <PackageReference Include="Marten" Version="3.13.1" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YtDeveloppement.EventSourcing.Orders.Application\Orders.Application.csproj" />
+    <ProjectReference Include="..\YtDeveloppement.EventSourcing.Orders.Domain\Orders.Domain.csproj" />
+    <ProjectReference Include="..\YtDeveloppement.EventSourcing.Orders.Infrastructure\Orders.Infrastructure.csproj" />
+  </ItemGroup>
+
+
+</Project>

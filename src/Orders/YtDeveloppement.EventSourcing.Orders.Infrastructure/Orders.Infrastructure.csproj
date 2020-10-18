@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>YtDeveloppement.EventSourcing.Orders.Infrastructure</AssemblyName>
+    <RootNamespace>YtDeveloppement.EventSourcing.Orders.Infrastructure</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Marten" Version="3.13.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\YtDeveloppement.EventSourcing.Orders.Domain\Orders.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,13 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using YtDeveloppement.EventSourcing.Microservices.Orders.Domain.Dtos;
 
 namespace YtDeveloppement.EventSourcing.Orders.Domain.Abstractions
 {
-    public interface IOrderRepository
+    public interface IWriteOrderRepository
     {
-        Task<OrderDto> GetByIdAsync(string id);
-        Task<List<OrderDto>> GetAllAsync();
         Task<OrderDto> InsertAsync(OrderDto customer);
     }
 }

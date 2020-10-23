@@ -7,6 +7,6 @@ namespace YtDeveloppement.EventSourcing.Microservices.Orders.Domain.Dtos
 {
     public class OrderDto
     {
-        string Id { get; set; }
+        public string Id { get; set; }
     }
 }

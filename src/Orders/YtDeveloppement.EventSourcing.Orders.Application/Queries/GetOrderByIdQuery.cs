@@ -17,9 +17,9 @@ namespace YtDeveloppement.EventSourcing.Microservices.Orders.Application.Queries
 
         public class GetOrderByIdHandler : IRequestHandler<GetOrderByIdQuery, OrderDto>
         {
-            private readonly IOrderRepository _orderRepository;
+            private readonly IReadOrderRepository _orderRepository;
 
-            public GetOrderByIdHandler(IOrderRepository orderRepository)
+            public GetOrderByIdHandler(IReadOrderRepository orderRepository)
             {
                 _orderRepository = orderRepository;
             }

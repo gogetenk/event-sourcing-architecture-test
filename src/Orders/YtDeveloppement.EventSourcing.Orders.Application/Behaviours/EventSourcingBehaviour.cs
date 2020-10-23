@@ -1,23 +1,25 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
-using MediatR.Pipeline;
+using MediatR;
 using YtDeveloppement.EventSourcing.Orders.Domain.Abstractions;
 using YtDeveloppement.EventSourcing.Orders.Domain.Events;
 
 namespace Orders.Application.Behaviours
 {
-    public class EventSourcingBehaviour<TRequest, TResponse> : IRequestPostProcessor<TRequest, TResponse>
+    public class EventSourcingBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
-        private readonly IEventStore _eventStore;
+        private readonly IEventRepository _eventStore;
 
-        public EventSourcingBehaviour(IEventStore eventStore)
+        public EventSourcingBehaviour(IEventRepository eventStore)
         {
             _eventStore = eventStore;
         }
 
-        public async Task Process(TRequest request, TResponse response, CancellationToken cancellationToken)
+        public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
-            await _eventStore.RecordAsync(request as EventBase);
+            var response = await next();
+            await _eventStore.RecordAsync(request as EventBase); // Persisting the event
+            return response;
         }
     }
 }

@@ -17,9 +17,9 @@ namespace YtDeveloppement.EventSourcing.Microservices.Orders.Application.Command
 
         public class CreateOrderHandler : IRequestHandler<CreateOrderCommand, OrderDto>
         {
-            private readonly IOrderRepository _orderRepository;
+            private readonly IWriteOrderRepository _orderRepository;
 
-            public CreateOrderHandler(IOrderRepository orderRepository)
+            public CreateOrderHandler(IWriteOrderRepository orderRepository)
             {
                 _orderRepository = orderRepository;
             }

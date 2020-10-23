@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Orders.Application.Behaviours;
 using YtDeveloppement.EventSourcing.Orders.Domain.Abstractions;
 using YtDeveloppement.EventSourcing.Orders.Infrastructure.Repositories;
 
@@ -28,7 +29,12 @@ namespace YtDeveloppement.EventSourcing.Microservices.Orders.WebApi
             services.AddAutoMapper(typeof(Startup));
             services.AddSwaggerGen();
 
-            services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IEventRepository, EventRepository>((sp) => new EventRepository(Configuration["EventStore:ConnectionString"]));
+            services.AddTransient<IReadOrderRepository, ReadOrderRepository>((sp) => new ReadOrderRepository(Configuration["OrderDb:Read:ConnectionString"]));
+            services.AddTransient<IWriteOrderRepository, WriteOrderRepository>((sp) => new WriteOrderRepository(Configuration["OrderDb:Write:ConnectionString"]));
+            //services.AddMarten(Configuration.GetConnectionString("Marten"));
+
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(EventSourcingBehaviour<,>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

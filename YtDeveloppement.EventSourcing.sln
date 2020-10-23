@@ -15,17 +15,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.WebApi", "src\Cus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders.WebApi", "src\Orders\WebApi\Orders.WebApi.csproj", "{653F49C0-6480-4AB0-84FE-12783D45D4CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Dal", "src\Customers\YtDeveloppement.EventSourcing.Customers.Dal\Customers.Dal.csproj", "{D138C69E-E72C-458D-802B-C6D5C5EC7682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Dal", "src\Customers\YtDeveloppement.EventSourcing.Customers.Dal\Customers.Dal.csproj", "{D138C69E-E72C-458D-802B-C6D5C5EC7682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Dal.Impl", "src\Customers\YtDeveloppement.EventSourcing.Customers.Dal.Impl\Customers.Dal.Impl.csproj", "{3A3FC780-A9F8-4C95-B1E0-6AC9A257A3BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Dal.Impl", "src\Customers\YtDeveloppement.EventSourcing.Customers.Dal.Impl\Customers.Dal.Impl.csproj", "{3A3FC780-A9F8-4C95-B1E0-6AC9A257A3BC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Customers.Model", "src\Customers\YtDeveloppement.EventSourcing.Customers.Model\Customers.Model.csproj", "{EB21CDA2-BFB9-4D79-824C-B5A2EA2F103F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Customers.Model", "src\Customers\YtDeveloppement.EventSourcing.Customers.Model\Customers.Model.csproj", "{EB21CDA2-BFB9-4D79-824C-B5A2EA2F103F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Application", "src\Orders\YtDeveloppement.EventSourcing.Orders.Application\Orders.Application.csproj", "{6F2CC66D-2BFE-4CB3-9284-D1581A6239CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders.Application", "src\Orders\YtDeveloppement.EventSourcing.Orders.Application\Orders.Application.csproj", "{6F2CC66D-2BFE-4CB3-9284-D1581A6239CB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Infrastructure", "src\Orders\YtDeveloppement.EventSourcing.Orders.Infrastructure\Orders.Infrastructure.csproj", "{60D98C07-E00C-449E-BD43-A8DEAE08FD82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders.Infrastructure", "src\Orders\YtDeveloppement.EventSourcing.Orders.Infrastructure\Orders.Infrastructure.csproj", "{60D98C07-E00C-449E-BD43-A8DEAE08FD82}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders.Domain", "src\Orders\YtDeveloppement.EventSourcing.Orders.Domain\Orders.Domain.csproj", "{75AD234F-085B-4735-A074-5AB1D43C1D24}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders.Domain", "src\Orders\YtDeveloppement.EventSourcing.Orders.Domain\Orders.Domain.csproj", "{75AD234F-085B-4735-A074-5AB1D43C1D24}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{E859D252-4770-4AA5-8512-5477B9381630}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +67,10 @@ Global
 		{75AD234F-085B-4735-A074-5AB1D43C1D24}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75AD234F-085B-4735-A074-5AB1D43C1D24}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75AD234F-085B-4735-A074-5AB1D43C1D24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E859D252-4770-4AA5-8512-5477B9381630}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E859D252-4770-4AA5-8512-5477B9381630}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E859D252-4770-4AA5-8512-5477B9381630}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E859D252-4770-4AA5-8512-5477B9381630}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{6F2CC66D-2BFE-4CB3-9284-D1581A6239CB} = {831AA984-6995-46E4-B520-EBB1B98992DB}
 		{60D98C07-E00C-449E-BD43-A8DEAE08FD82} = {831AA984-6995-46E4-B520-EBB1B98992DB}
 		{75AD234F-085B-4735-A074-5AB1D43C1D24} = {831AA984-6995-46E4-B520-EBB1B98992DB}
+		{E859D252-4770-4AA5-8512-5477B9381630} = {831AA984-6995-46E4-B520-EBB1B98992DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {272DBF68-454B-4A74-BC34-7ACEF8141005}

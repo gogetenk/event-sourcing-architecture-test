@@ -7,14 +7,17 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
-COPY ["src/Orders/YtDeveloppement.EventSourcing.Microservices.Orders.WebApi/YtDeveloppement.EventSourcing.Microservices.Orders.WebApi.csproj", "src/Orders/YtDeveloppement.EventSourcing.Microservices.Orders.WebApi/"]
-RUN dotnet restore "src/Orders/YtDeveloppement.EventSourcing.Microservices.Orders.WebApi/YtDeveloppement.EventSourcing.Microservices.Orders.WebApi.csproj"
+COPY ["src/Orders/WebApi/Orders.WebApi.csproj", "src/Orders/WebApi/"]
+COPY ["src/Orders/YtDeveloppement.EventSourcing.Orders.Infrastructure/Orders.Infrastructure.csproj", "src/Orders/YtDeveloppement.EventSourcing.Orders.Infrastructure/"]
+COPY ["src/Orders/YtDeveloppement.EventSourcing.Orders.Domain/Orders.Domain.csproj", "src/Orders/YtDeveloppement.EventSourcing.Orders.Domain/"]
+COPY ["src/Orders/YtDeveloppement.EventSourcing.Orders.Application/Orders.Application.csproj", "src/Orders/YtDeveloppement.EventSourcing.Orders.Application/"]
+RUN dotnet restore "src/Orders/WebApi/Orders.WebApi.csproj"
 COPY . .
-WORKDIR "/src/src/Orders/YtDeveloppement.EventSourcing.Microservices.Orders.WebApi"
-RUN dotnet build "YtDeveloppement.EventSourcing.Microservices.Orders.WebApi.csproj" -c Release -o /app/build
+WORKDIR "/src/src/Orders/WebApi"
+RUN dotnet build "Orders.WebApi.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "YtDeveloppement.EventSourcing.Microservices.Orders.WebApi.csproj" -c Release -o /app/publish
+RUN dotnet publish "Orders.WebApi.csproj" -c Release -o /app/publish
 
 FROM base AS final
 WORKDIR /app
